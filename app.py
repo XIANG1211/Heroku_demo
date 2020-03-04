@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 @app.route('/api', methods=['POST', 'GET'])
 def makecalc():
+    model=load_model("./models/cnn.h5")
     data = request.get_json("")
     data2=np.array(data)
     prediction =model.predict(data2)
-
+    retrn json.dumps(int(np.argmax(prediction)))
     print(json.dumps(int(np.argmax(prediction))))
 
 if __name__ == '__main__':
-    model=load_model("./models/cnn.h5")
     app.run()
