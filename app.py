@@ -13,7 +13,8 @@ def makecalc():
     data = request.get_json(force=True)
     data=np.array(data["test"])
     prediction =model.predict(data)
-    return json.dumps(int(np.argmax(prediction)))
+    if request.method == "GET":
+      return json.dumps(int(np.argmax(prediction)))
    #return json.dumps(data)
 if __name__ == '__main__':
     app.run()
