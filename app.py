@@ -14,6 +14,6 @@ def makecalc():
     #prediction =model.predict(data2)
     #return json.dumps(int(np.argmax(prediction)))
     #print(json.dumps(int(np.argmax(prediction))))
-    print(data2.shape)
+    return data2.shape
 if __name__ == '__main__':
     app.run()
