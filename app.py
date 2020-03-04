@@ -4,6 +4,7 @@ import json
 from keras.models import load_model
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 1600 * 1024 * 1024
 
 model=load_model("./models/cnn.h5")
 @app.route('/api', methods=['POST', 'GET'])
