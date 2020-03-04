@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/api', methods=['POST', 'GET'])
 def makecalc():
-    data = request.get_json()
-    data2=np.array(data[""])
+    data = request.get_json("")
+    data2=np.array(data)
     prediction =model.predict(data2)
 
     print(json.dumps(int(np.argmax(prediction))))
