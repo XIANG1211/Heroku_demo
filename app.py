@@ -9,10 +9,9 @@ model=load_model("./models/cnn.h5")
 @app.route('/api', methods=['POST', 'GET'])
 def makecalc():
   
-    data = request.get_json()
-    data2=np.array(data[""])
-    #prediction =model.predict(data2)
+    data = request.get_json("")
+    #prediction =model.predict(data)
     #return json.dumps(int(np.argmax(prediction)))
-    return str(data2.shape)
+    return str(data.shape)
 if __name__ == '__main__':
     app.run()
