@@ -13,6 +13,6 @@ def makecalc():
     data = request.get_json(force=True)
     #prediction =model.predict(data)
     #return json.dumps(int(np.argmax(prediction)))
-    return str(data)
+    return json.dumps(data)
 if __name__ == '__main__':
     app.run()
