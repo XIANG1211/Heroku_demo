@@ -10,9 +10,10 @@ app = Flask(__name__)
 @app.route('/api', methods=['POST'])
 def makecalc():
     data = request.get_json()
-    prediction = np.array2string(model.predict(data))
+    data2=np.array(data[""])
+    prediction =model.predict(data2)
 
-    return jsonify(np.argmax(prediction))
+    return json.dumps(int(np.argmax(prediction)))
 
 if __name__ == '__main__':
     model=load_model("./models/cnn.h5")
