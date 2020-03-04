@@ -7,7 +7,7 @@ from keras.models import load_model
 app = Flask(__name__)
 
 
-@app.route('/api/', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def makecalc():
     data = request.get_json()
     prediction = np.array2string(model.predict(data))
