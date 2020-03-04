@@ -16,4 +16,4 @@ def makecalc():
 
 if __name__ == '__main__':
     model=load_model("./models/cnn.h5")
-    app.run(debug=True)
+    app.run()
