@@ -6,7 +6,7 @@ from keras.models import load_model
 app = Flask(__name__)
 
 
-@app.route('/api', methods=['POST'])
+@app.route('/api', methods=['POST', 'GET'])
 def makecalc():
     data = request.get_json()
     data2=np.array(data[""])
