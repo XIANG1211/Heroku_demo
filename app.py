@@ -1,7 +1,6 @@
 from flask import Flask, request, redirect, url_for, flash, jsonify
 import numpy as np
 import json
-from PIL import Image
 from keras.models import load_model
 
 app = Flask(__name__)
