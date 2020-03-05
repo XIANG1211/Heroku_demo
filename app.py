@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, flash, jsonify, render_template
+from flask import Flask, request, redirect, url_for, flash, jsonify, render_template,make_response
 import numpy as np
 import json
 from keras.models import load_model
@@ -17,6 +17,7 @@ def makecalc():
     prediction =model.predict(data)
     #return json.dumps(int(np.argmax(prediction)))
     #title = 'Good Flask'
-    return render_template('index.html',json=jsonify(int(np.argmax(prediction))))
+    #return render_template('index.html',json=jsonify(int(np.argmax(prediction))))
+    return make_response(jsonify(int(np.argmax(prediction))), 201)
 if __name__ == '__main__':
     app.run()
