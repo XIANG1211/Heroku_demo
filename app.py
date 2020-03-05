@@ -15,6 +15,6 @@ def makecalc():
     prediction =model.predict(data)
     #return json.dumps(int(np.argmax(prediction)))
     #title = 'Good Flask'
-    return render_template('index.html',json=int(np.argmax(prediction)))
+    return render_template('index.html',json=json.dumps(int(np.argmax(prediction))))
 if __name__ == '__main__':
     app.run()
