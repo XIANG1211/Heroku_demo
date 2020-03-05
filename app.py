@@ -9,11 +9,12 @@ app.config['MAX_CONTENT_LENGTH'] = 1600 * 1024 * 1024
 model=load_model("./models/cnn.h5")
 @app.route('/api', methods=['POST', 'GET'])
 def makecalc():
-    data = request.get_json(force=True)
-    data=np.array(data["test"])
-    prediction =model.predict(data)
-    return render_template('index.html',title=int(np.argmax(prediction)))
+    #data = request.get_json(force=True)
+    #data=np.array(data["test"])
+    #prediction =model.predict(data)
+    #return render_template('index.html',title=int(np.argmax(prediction)))
     #return json.dumps(int(np.argmax(prediction)))
-   #return json.dumps(data)
+    title = 'Good Flask'
+    return render_template('index.html',json=title)
 if __name__ == '__main__':
     app.run()
